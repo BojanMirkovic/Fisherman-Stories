@@ -13,8 +13,10 @@ href= Specifies the location of the linked document-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+<!--We are adding icon for the small screen menu,fontawsome.com-->
 
-    </head> 
+<script src="https://kit.fontawesome.com/b7505c27fc.js" crossorigin="anonymous"></script>
+
     <body>
         <!--The <section> tag defines a section in a document.-->
     <section class="header">
@@ -28,7 +30,11 @@ href= Specifies the location of the linked document-->
              <!--The <div> tag is used as a container for HTML elements -
                which is then styled with CSS or manipulated with JavaScript.
                The <div> tag is easily styled by using the class or id attribute.-->
-            <div class="nav-links">
+            <div class="nav-links" id="navLinks">
+                <!--Adding the small screen clousing icon,(link from awsome fonts iscons)-->
+                <!--we have to add onclick event becouse we have to create event an hide menu-->
+                <i class="fa fa-times" onclick="hideMenu()" ></i>
+             
               <!--The <ul> tag defines an unordered (bulleted) list.
                We use the <ul> tag together with the <li> tag to create unordered lists.-->
                 <ul>
@@ -39,6 +45,8 @@ href= Specifies the location of the linked document-->
                     <li><a href="">CONTACT</a></li>
                 </ul>
             </div>
+            <!--before </nav> we have to add menue icon for small screen (link from awsome fonts icons)-->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
         <div class="text-box">
             <h1>Fisherman Stories</h1>
@@ -48,5 +56,15 @@ href= Specifies the location of the linked document-->
         </div>
 
     </section>
+    <!--create javaScrept function for showing and hiding Menu in small screen mode-->
+    <script>
+      var navLinks=document.getElementById("navLinks");
+      function showMenu(){
+        navLinks.style.right="0";
+      }
+      function hideMenu(){
+        navLinks.style.right="-200px";
+      }
+    </script>
     </body>
 </html>
